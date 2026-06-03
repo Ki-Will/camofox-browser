@@ -116,9 +116,9 @@
     ]
   },
   "scripts": {
-    "build": "tsc -p . || true; mkdir -p dist && cp plugin.js dist/plugin.js",
+    "build": "node init && tsc -p . || true; mkdir -p dist && cp plugin.js dist/plugin.js",
     "prepublishOnly": "npm run build",
-    "start": "node server.js",
+    "start": "node init && node server.js",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest --runInBand --forceExit",
     "test:e2e": "NODE_OPTIONS='--experimental-vm-modules' jest --runInBand --forceExit tests/e2e",
     "test:plugins": "NODE_OPTIONS='--experimental-vm-modules' jest --forceExit plugins/",
